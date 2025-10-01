@@ -35,7 +35,8 @@ export async function uploadImageToCloudinary(
         },
         (error, result) => {
           if (error) reject(error);
-          else resolve(result);
+          else if (result) resolve(result);
+          else reject(new Error('Upload failed: no result returned'));
         }
       ).end(buffer);
     }) as { secure_url: string; public_id: string };
