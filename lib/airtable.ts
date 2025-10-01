@@ -22,7 +22,7 @@ export async function saveSegnalazione(data: SegnalazioneData) {
     console.log('Nome tabella:', process.env.AIRTABLE_TABLE_NAME);
     console.log('Base ID:', process.env.AIRTABLE_BASE_ID);
     
-    const record = await base(process.env.AIRTABLE_TABLE_NAME!).create({
+    const recordData = {
       'Nome': data.nome,
       'Cognome': data.cognome,
       'Email': data.email,
@@ -32,7 +32,10 @@ export async function saveSegnalazione(data: SegnalazioneData) {
       'Data Invio': new Date(data.dataInvio).toISOString().split('T')[0], // Solo la data YYYY-MM-DD
       'Consenso Privacy': data.consensoPrivacy,
       'Stato': 'Nuova'
-    } as Record<string, unknown>);
+    };
+
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const record = await base(process.env.AIRTABLE_TABLE_NAME!).create(recordData as any);
 
     console.log('Record salvato con successo:', record.id);
     return { success: true, recordId: record.id };
