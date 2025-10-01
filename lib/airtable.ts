@@ -35,8 +35,9 @@ export async function saveSegnalazione(data: SegnalazioneData) {
     };
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const record = await base(process.env.AIRTABLE_TABLE_NAME!).create(recordData as any);
+    const records = await base(process.env.AIRTABLE_TABLE_NAME!).create(recordData as any);
 
+    const record = records[0];
     console.log('Record salvato con successo:', record.id);
     return { success: true, recordId: record.id };
   } catch (error) {
