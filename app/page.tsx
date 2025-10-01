@@ -163,7 +163,7 @@ export default function Component() {
     if (activeTab === "risolte" && segnalazioniRisolte.length === 0) {
       loadSegnalazioniRisolte()
     }
-  }, [activeTab])
+  }, [activeTab, segnalazioniRisolte.length])
 
   // Gestione ricerca automatica
   const handleSearchInputChange = (value: string) => {

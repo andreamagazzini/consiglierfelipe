@@ -71,7 +71,7 @@ export default function PrivacyPolicy() {
               </ul>
               <p className="mt-3">
                 Per esercitare questi diritti, è possibile contattare il titolare del trattamento 
-                all'indirizzo email: <a href="mailto:filippogarrone95@hotmail.com" className="text-blue-600 underline">filippogarrone95@hotmail.com</a>
+                all&apos;indirizzo email: <a href="mailto:filippogarrone95@hotmail.com" className="text-blue-600 underline">filippogarrone95@hotmail.com</a>
               </p>
             </section>
 
