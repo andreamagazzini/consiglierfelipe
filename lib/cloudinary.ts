@@ -38,7 +38,7 @@ export async function uploadImageToCloudinary(
           else resolve(result);
         }
       ).end(buffer);
-    }) as any;
+    }) as { secure_url: string; public_id: string };
 
     return {
       url: result.secure_url,

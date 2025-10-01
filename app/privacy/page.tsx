@@ -31,7 +31,7 @@ export default function PrivacyPolicy() {
             <section>
               <h2 className="text-xl font-semibold text-slate-800 mb-3">3. Base Giuridica</h2>
               <p>
-                Il trattamento dei dati personali si basa sul consenso dell'interessato (art. 6.1.a GDPR) 
+                Il trattamento dei dati personali si basa sul consenso dell&apos;interessato (art. 6.1.a GDPR) 
                 per tutte le finalità sopra indicate, compresi i contatti per aggiornamenti generali e 
                 comunicazioni elettorali.
               </p>
@@ -59,12 +59,12 @@ export default function PrivacyPolicy() {
             </section>
 
             <section>
-              <h2 className="text-xl font-semibold text-slate-800 mb-3">6. Diritti dell'Interessato</h2>
-              <p>L'interessato ha il diritto di:</p>
+              <h2 className="text-xl font-semibold text-slate-800 mb-3">6. Diritti dell&apos;Interessato</h2>
+              <p>L&apos;interessato ha il diritto di:</p>
               <ul className="list-disc list-inside mt-2 space-y-1">
                 <li>Accedere ai propri dati personali</li>
                 <li>Rettificare i dati inesatti o incompleti</li>
-                <li>Cancellare i propri dati (diritto all'oblio)</li>
+                <li>Cancellare i propri dati (diritto all&apos;oblio)</li>
                 <li>Limitare il trattamento dei propri dati</li>
                 <li>Opporsi al trattamento</li>
                 <li>Revocare il consenso in qualsiasi momento</li>
@@ -87,7 +87,7 @@ export default function PrivacyPolicy() {
               <h2 className="text-xl font-semibold text-slate-800 mb-3">8. Comunicazione dei Dati</h2>
               <p>
                 I dati personali non vengono comunicati a terzi, ad eccezione dei casi previsti dalla legge 
-                o per l'espletamento delle funzioni istituzionali.
+                o per l&apos;espletamento delle funzioni istituzionali.
               </p>
             </section>
 

@@ -214,7 +214,7 @@ export default function Component() {
             </div>
             <p className="text-sm lg:text-lg text-slate-100 leading-relaxed">
               Buongiorno, sono Luigifilippo Garrone e sono uno dei consiglieri del Municipio I Centro Est. Sono stato
-              eletto nel 2022 nella maggioranza e successivamente nel 2025 nell'opposizione. Il mio obiettivo
+              eletto nel 2022 nella maggioranza e successivamente nel 2025 nell&apos;opposizione. Il mio obiettivo
               principale è quello di risolvere le segnalazioni dei cittadini ed è per questo che ho creato questo
               sito. Come potete vedere, accanto alla mia foto si trova un modulo di contatto: basta compilarlo e
               allegare le foto per inviarmi la vostra segnalazione, che sarà presa in carico da me personalmente. Vi
@@ -437,7 +437,7 @@ export default function Component() {
                       </div>
                       {searchTerm && (
                         <p className="text-sm text-gray-600 mt-2">
-                          Risultati per: "{searchTerm}" ({totalCount} trovati)
+                          Risultati per: &quot;{searchTerm}&quot; ({totalCount} trovati)
                         </p>
                       )}
                       {searchInput.length > 0 && searchInput.length < 3 && (
