@@ -8,6 +8,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Upload, Search, ChevronLeft, ChevronRight } from "lucide-react"
 import Image from "next/image"
 import { useState, useEffect } from "react"
+import { SegnalazioneRisolta } from "@/lib/airtable"
 
 export default function Component() {
   const [activeTab, setActiveTab] = useState("segnalazione")
@@ -123,7 +124,7 @@ export default function Component() {
   }
 
   // Stato per le segnalazioni risolte
-  const [segnalazioniRisolte, setSegnalazioniRisolte] = useState<any[]>([])
+  const [segnalazioniRisolte, setSegnalazioniRisolte] = useState<SegnalazioneRisolta[]>([])
   const [isLoadingRisolte, setIsLoadingRisolte] = useState(false)
   const [currentPage, setCurrentPage] = useState(1)
   const [totalPages, setTotalPages] = useState(1)
