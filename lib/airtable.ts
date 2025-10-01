@@ -28,11 +28,11 @@ export async function saveSegnalazione(data: SegnalazioneData) {
       'Email': data.email,
       'Telefono': data.telefono,
       'Descrizione': data.descrizione,
-      'Immagini': data.immagini || [],
+      'Immagini': data.immagini?.map(img => ({ url: img.url })) || [],
       'Data Invio': new Date(data.dataInvio).toISOString().split('T')[0], // Solo la data YYYY-MM-DD
       'Consenso Privacy': data.consensoPrivacy,
       'Stato': 'Nuova'
-    });
+    } as any);
 
     console.log('Record salvato con successo:', record.id);
     return { success: true, recordId: record.id };
