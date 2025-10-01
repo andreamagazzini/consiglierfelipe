@@ -32,7 +32,7 @@ export async function saveSegnalazione(data: SegnalazioneData) {
       'Data Invio': new Date(data.dataInvio).toISOString().split('T')[0], // Solo la data YYYY-MM-DD
       'Consenso Privacy': data.consensoPrivacy,
       'Stato': 'Nuova'
-    } as any);
+    } as Record<string, unknown>);
 
     console.log('Record salvato con successo:', record.id);
     return { success: true, recordId: record.id };
