@@ -37,13 +37,36 @@ export async function saveSegnalazione(data: SegnalazioneData) {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const records = await base(process.env.AIRTABLE_TABLE_NAME!).create(recordData as any);
 
-    if (!records || records.length === 0) {
-      throw new Error('Nessun record creato in Airtable');
+    console.log('Risposta Airtable completa:', JSON.stringify(records, null, 2));
+    console.log('Tipo di records:', typeof records);
+    console.log('È un array?', Array.isArray(records));
+    console.log('Lunghezza records:', records?.length);
+
+    if (!records) {
+      throw new Error('Nessuna risposta da Airtable');
     }
 
-    const record = records[0];
-    if (!record || !record.id) {
-      throw new Error('Record creato ma senza ID valido');
+    // Airtable può restituire un singolo record o un array
+    let record;
+    if (Array.isArray(records)) {
+      if (records.length === 0) {
+        throw new Error('Nessun record creato in Airtable');
+      }
+      record = records[0];
+    } else {
+      record = records;
+    }
+
+    console.log('Record estratto:', JSON.stringify(record, null, 2));
+    console.log('Record ID:', record?.id);
+    console.log('Record ID tipo:', typeof record?.id);
+
+    if (!record) {
+      throw new Error('Record non trovato nella risposta');
+    }
+
+    if (!record.id) {
+      throw new Error(`Record creato ma senza ID valido. Record: ${JSON.stringify(record)}`);
     }
 
     console.log('Record salvato con successo:', record.id);
