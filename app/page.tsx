@@ -47,10 +47,22 @@ export default function Component() {
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = Array.from(e.target.files || [])
+    
+    // Validazione: massimo 3 foto
+    if (files.length > 3) {
+      setSubmitMessage("Errore: È possibile allegare al massimo 3 foto.")
+      return
+    }
+    
     setFormData(prev => ({
       ...prev,
       immagini: files
     }))
+    
+    // Pulisci il messaggio di errore se la validazione passa
+    if (submitMessage.includes("Errore")) {
+      setSubmitMessage("")
+    }
   }
 
   const uploadImages = async (files: File[]): Promise<Array<{url: string, filename: string}>> => {
@@ -77,6 +89,19 @@ export default function Component() {
     e.preventDefault()
     setIsSubmitting(true)
     setSubmitMessage("")
+
+    // Validazione: almeno una foto e massimo 3
+    if (formData.immagini.length === 0) {
+      setSubmitMessage("Errore: È obbligatorio allegare almeno una foto.")
+      setIsSubmitting(false)
+      return
+    }
+
+    if (formData.immagini.length > 3) {
+      setSubmitMessage("Errore: È possibile allegare al massimo 3 foto.")
+      setIsSubmitting(false)
+      return
+    }
 
     try {
       // Carica le immagini su Cloudinary
@@ -354,7 +379,7 @@ export default function Component() {
                             </Button>
                           </div>
                           <p className="text-xs text-gray-500 mt-2">
-                            Formati supportati: JPG, PNG, GIF (max 10MB per file)
+                            Formati supportati: JPG, PNG, GIF (max 10MB per file). Minimo 1 foto, massimo 3 foto.
                           </p>
                           {formData.immagini.length > 0 && (
                             <p className="text-sm text-green-600 mt-2">
