@@ -354,7 +354,7 @@ export default function Component() {
 
                       {/* Upload Immagini */}
                       <div className="space-y-2">
-                        <Label htmlFor="immagini">Allega almeno 2 foto della situazione *</Label>
+                        <Label htmlFor="immagini">Allega almeno 1 foto della situazione *</Label>
                         <div className="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center hover:border-gray-400 transition-colors">
                           <Upload className="mx-auto h-12 w-12 text-gray-400 mb-4" />
                           <div className="space-y-2">

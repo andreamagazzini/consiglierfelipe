@@ -37,7 +37,15 @@ export async function saveSegnalazione(data: SegnalazioneData) {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const records = await base(process.env.AIRTABLE_TABLE_NAME!).create(recordData as any);
 
+    if (!records || records.length === 0) {
+      throw new Error('Nessun record creato in Airtable');
+    }
+
     const record = records[0];
+    if (!record || !record.id) {
+      throw new Error('Record creato ma senza ID valido');
+    }
+
     console.log('Record salvato con successo:', record.id);
     return { success: true, recordId: record.id };
   } catch (error) {
