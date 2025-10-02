@@ -227,13 +227,13 @@ export default function Component() {
           <div className="space-y-4 lg:space-y-6">
             {/* Titolo desktop - sopra la foto */}
             <h1 className="hidden lg:block text-3xl font-bold text-white text-center">Segnalalo al Consiglier Felipe</h1>
-            <div className="relative overflow-hidden rounded-xl shadow-lg">
+            <div className="relative overflow-hidden rounded-lg shadow-lg">
               <Image
                 src="/images/felipe-sindaco.jpg"
                 alt="Felipe Sindaco - Sistema di Segnalazione"
-                width={800}
-                height={320}
-                className="w-full h-80 lg:h-[534px] object-cover object-center"
+                width={600}
+                height={600}
+                className="w-full aspect-square max-w-[600px] mx-auto object-cover object-center rounded-lg"
                 style={{ objectPosition: 'center -20px' }}
               />
             </div>
